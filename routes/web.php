@@ -2,16 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function() {
-    return 'Home';
-});
-
-Route::group(['prefix' => '/user'], function () {
-    Route::get('/profile', function() {
-        return 'Profile';
-    });
-
-    Route::get('/password', function () {
-        return 'Password';
-    });
+Route::get('/posts/{id}', function($id) {
+    return view('posts.show', [
+        'userId' => $id
+    ]);
 });
