@@ -6,6 +6,6 @@ Route::get('/', function() {
     return 'Home';
 });
 
-Route::get('/about', function() {
-    return 'About';
-})->name('about');
+Route::get('/users/{userId}/{username}', function($id, $username) {
+    return $id . ' ' . $username;
+});
