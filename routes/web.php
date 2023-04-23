@@ -6,6 +6,12 @@ Route::get('/', function() {
     return 'Home';
 });
 
-Route::get('/users/{userId}/{username}', function($id, $username) {
-    return $id . ' ' . $username;
+Route::group(['prefix' => '/user'], function () {
+    Route::get('/profile', function() {
+        return 'Profile';
+    });
+
+    Route::get('/password', function () {
+        return 'Password';
+    });
 });
