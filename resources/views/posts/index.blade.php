@@ -7,6 +7,14 @@
         <title>Document</title>
     </head>
     <body>
-        {{ $userId }} 
+        @if (count($posts))
+            @foreach ($posts as $index => $post)
+                <div>
+                    {{$post['id']}}: {{$post['title']}} ({{ $index }})
+                </div>
+            @endforeach
+        @else
+            There are no posts
+        @endif
     </body>
 </html>
