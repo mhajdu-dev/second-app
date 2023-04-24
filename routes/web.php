@@ -12,3 +12,9 @@ Route::get('/posts', function () {
         'posts' => $posts
     ]);
 });
+
+Route::get('/posts/{id}', function ($id) {
+    return view('posts.show', [
+        'id' => $id
+    ]);
+});

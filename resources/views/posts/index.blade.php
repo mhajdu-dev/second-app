@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
-    <body>
-        @if (count($posts))
-            @foreach ($posts as $index => $post)
-                <div>
-                    {{$post['id']}}: {{$post['title']}} ({{ $index }})
-                </div>
-            @endforeach
-        @else
-            There are no posts
-        @endif
-    </body>
-</html>
+@extends('layouts.app')
+
+@section('content')  
+    @if (count($posts))
+        @foreach ($posts as $index => $post)
+            <div>
+                {{$post['id']}}: {{$post['title']}} ({{ $index }})
+            </div>
+        @endforeach
+    @else
+        There are no posts
+@endif
+@endsection
