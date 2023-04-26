@@ -33,6 +33,9 @@ class PostController extends Controller
             'body' => 'required|max:200'
         ]);
 
-        dd($request->title);
+        // database
+
+        $postId = 1;    
+        return redirect()->route('posts.show', $postId);
     }
 }
